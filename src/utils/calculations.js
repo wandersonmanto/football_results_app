@@ -30,7 +30,7 @@ export const calculateProfitSimulation = (games, filters) => {
     
     if (favoriteWon) {
       wins++;
-      totalProfit += (filters.valorAposta * favoriteOdd) - filters.valorAposta;
+      totalProfit += (filters.valorAposta * (favoriteOdd + (favoriteOdd * 0.30))) - filters.valorAposta;
     } else {
       totalProfit -= filters.valorAposta;
     }
