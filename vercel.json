@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "name": "football-results-app",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_FIREBASE_API_KEY": "AIzaSyDFUZEwNzOQxhvgrrmPHUhL5EaV9WhJMfo",
+    "VITE_FIREBASE_AUTH_DOMAIN": "packball-6b4be.firebaseapp.com",
+    "VITE_FIREBASE_PROJECT_ID": "packball-6b4be",
+    "VITE_FIREBASE_STORAGE_BUCKET": "packball-6b4be.firebasestorage.app",
+    "VITE_FIREBASE_MESSAGING_SENDER_ID": "941905337205",
+    "VITE_FIREBASE_APP_ID": "1:941905337205:web:b242704954c282ad89d13c"
+  },
+  "build": {
+    "env": {
+      "REACT_APP_ENVIRONMENT": "production"
+    }
+  },
+  "functions": {
+    "app/**": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "regions": ["gru1"],
+  "github": {
+    "autoDeployOnPush": true,
+    "autoJobCancelation": true
+  }
+}
